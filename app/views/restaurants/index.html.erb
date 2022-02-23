@@ -1,0 +1,10 @@
+<h1>RASSIA</h1>
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li>
+      <%= link_to restaurant.name, restaurant_path(restaurant) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "create a new Restaurant", new_restaurant_path, class: "btn btn-primary" %>
