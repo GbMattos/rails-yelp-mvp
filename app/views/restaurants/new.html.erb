@@ -1,18 +1,35 @@
-<h1>New Restaurant</h1>
-<div class="form-group">
-  <%= form_for(@restaurant) do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name, class: "form-control", placeholder: "Ex: Los Locos" %>
-    <%= f.label :address %>
-    <%= f.text_field :address, class: "form-control", placeholder: "Ex: Flower St."  %>
-    <%= f.label :phone_number %>
-    <%= f.text_field :phone_number, class: "form-control", placeholder: "(ddd)999999999"  %>
-    <%= f.label :category %>
-    <%= f.text_field :category, class: "form-control", placeholder: "Ex: chinese"  %>
-    <%= f.submit %>
-  <% end %>
-</div>
-
-<div class="mt-2">
-  <%= link_to "Go back", restaurants_path, class: "btn btn-primary" %>
+<div class="container">
+  <h1>New Restaurant</h1>
+    <div class="form-row">
+      <%= form_for(@restaurant) do |f| %>
+        <div class="row">
+          <div class="form-group col-6">
+            <%= f.label :name %>
+            <%= f.text_field :name, class: "form-control", placeholder: "Ex: Los Locos" %>
+          </div>
+          <div class="form-group col-6">
+            <%= f.label :address %>
+            <%= f.text_field :address, class: "form-control", placeholder: "Ex: Flower St."  %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <%= f.label :phone_number %>
+            <%= f.text_field :phone_number, class: "form-control", placeholder: "(ddd)999999999"  %>
+          </div>
+          <div class="form-group col-md-6">
+            <%= f.label :category %>
+            <%= f.text_field :category, class: "form-control", placeholder: "Ex: chinese"  %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="mt-2 col-md-6">
+            <%= f.submit %>
+          </div>
+         <% end %>
+          <div class="mt-2 col-md-6">
+            <%= link_to "Go back", restaurants_path, class: "btn btn-primary" %>
+          </div>
+        </div>
+    </div>
 </div>
