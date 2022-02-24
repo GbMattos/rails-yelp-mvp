@@ -1,17 +1,23 @@
-<h1>RASSIA</h1>
-<div class="row">
-  <ul style="list-style: none">
-    <% @restaurants.each do |restaurant| %>
-      <li>
-        <div class="card mb-2" style="width: 18rem">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Abu_Nawas_Beach_restaurant_-_Flickr_-_Al_Jazeera_English_%281%29.jpg" class="card-img-top" alt="">
-          <div class="card-body">
-            <%= link_to restaurant.name, restaurant_path(restaurant), class: "card-title text-decoration-none" %>
+<div class="container">
+  <h1>Available Restaurants:</h1>
+  <div class="row">
+    <div class="col">
+      <ul style="list-style: none" class="d-flex justify-content-center flex-wrap">
+        <% @restaurants.each do |restaurant| %>
+          <div class="col-4">
+            <li>
+              <div class="card mb-2 col-6" style="width: 18rem">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Abu_Nawas_Beach_restaurant_-_Flickr_-_Al_Jazeera_English_%281%29.jpg" class="card-img-top" alt="">
+                <div class="card-body">
+                  <%= link_to restaurant.name, restaurant_path(restaurant), class: "card-title text-decoration-none" %>
+                </div>
+              </div>
+            </li>
           </div>
-        </div>
-      </li>
-    <% end %>
-  </ul>
-</div>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 
-<%= link_to "create a new Restaurant", new_restaurant_path, class: "btn btn-primary" %>
+  <%= link_to "create a new Restaurant", new_restaurant_path, class: "btn btn-primary" %>
+</div>
